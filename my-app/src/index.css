@@ -1,0 +1,463 @@
+/* Radial Out */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
+.hvr-radial-out:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 112, 124, 0.7);
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+
+.hvr-radial-out:hover,
+.hvr-radial-out:focus,
+.hvr-radial-out:active {
+  color: white; }
+
+.hvr-radial-out:hover:before,
+.hvr-radial-out:focus:before,
+.hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2); }
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); } }
+/**
+ * ----------------------------------------
+ * animation scale-down-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  to {
+    opacity: 0; } }
+@keyframes zoomOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  to {
+    opacity: 0; } }
+.info-box-anim {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: zoomOut;
+          animation-name: zoomOut;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s; }
+
+.info-box-anim:hover {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s; }
+
+.pic-anim {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: scale-down-center;
+          animation-name: scale-down-center;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s; }
+
+.pic-anim:hover {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-name: scale-up-center;
+          animation-name: scale-up-center;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s; }
+
+.flex-container {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+a {
+  color: #000; }
+
+a:hover {
+  text-decoration: none;
+  color: #000; }
+
+.cart-container {
+  text-align: center; }
+  .cart-container .fa-shopping-cart {
+    font-size: 40px;
+    top: 24px;
+    position: relative; }
+
+.searchbar-container,
+.logo-container,
+.cart-container {
+  width: 30%; }
+  .searchbar-container h1,
+  .logo-container h1,
+  .cart-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 550; }
+  .searchbar-container .fa-search,
+  .logo-container .fa-search,
+  .cart-container .fa-search {
+    top: 36px;
+    left: 4vw;
+    position: relative;
+    font-size: 25px; }
+  .searchbar-container input,
+  .logo-container input,
+  .cart-container input {
+    width: 50%;
+    margin: 0 AUTO;
+    border: none;
+    border-bottom: 1px solid black; }
+    .searchbar-container input .form-control,
+    .logo-container input .form-control,
+    .cart-container input .form-control {
+      border-radius: 0 !important; }
+
+.banner-ad {
+  margin-top: 200px;
+  width: 100%;
+  background-color: black; }
+  .banner-ad p {
+    color: white; }
+
+nav {
+  margin-left: 25%;
+  margin-right: 25%; }
+  nav ul {
+    list-style-type: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  nav li {
+    font-weight: 550;
+    font-family: 'Questrial', sans-serif; }
+
+.pic-big-container {
+  margin-top: 50px;
+  margin-left: 15%;
+  margin-right: 15%; }
+  .pic-big-container h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600; }
+  .pic-big-container .cont {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden; }
+  .pic-big-container .info-box {
+    position: absolute;
+    /* width: 30%; */
+    /* padding: 30%; */
+    padding-left: 50%;
+    padding-right: 50%;
+    padding-top: 27%;
+    padding-bottom: 27%;
+    height: 30%; }
+  .pic-big-container .pic {
+    padding-left: 5px;
+    padding-right: 5px; }
+    .pic-big-container .pic .text-cont {
+      top: 40%;
+      position: relative; }
+      .pic-big-container .pic .text-cont p {
+        margin-bottom: 0; }
+  .pic-big-container .pic-cont-1 {
+    overflow: hidden; }
+    .pic-big-container .pic-cont-1 .pic-1 {
+      width: 100%;
+      height: 37vw;
+      background-size: 100%;
+      background-image: url("https://njorunactive.com/uploads/images/Desert-Bloom/W0A9452.jpg"); }
+  .pic-big-container .pic-cont-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    height: 18vw; }
+    .pic-big-container .pic-cont-2 .pic-2 {
+      -webkit-box-flex: 4;
+          -ms-flex-positive: 4;
+              flex-grow: 4;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("https://njorunactive.com/uploads/images/United/F9wW32TECrCM0nNiLfnw_Tully-Lou_Campaign_030517_10513_00632.jpg"); }
+    .pic-big-container .pic-cont-2 .pic-3 {
+      -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+              flex-grow: 2; }
+  .pic-big-container .pic-cont-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%;
+    height: 18vw; }
+    .pic-big-container .pic-cont-3 .pic-4 {
+      -webkit-box-flex: 4;
+          -ms-flex-positive: 4;
+              flex-grow: 4;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("https://njorunactive.com/uploads/images/First-Base-2017/JPP_3012-copy.jpg"); }
+    .pic-big-container .pic-cont-3 .pic-5 {
+      -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+              flex-grow: 2; }
+
+.product-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+  .product-container .product-item {
+    font-family: 'Questrial', sans-serif;
+    width: 25%; }
+    .product-container .product-item img {
+      width: 100%; }
+    .product-container .product-item .product-brand {
+      font-size: 15px; }
+    .product-container .product-item .product-name {
+      font-size: 20px;
+      font-weight: 700; }
+    .product-container .product-item .product-price {
+      font-weight: 500; }
+      .product-container .product-item .product-price .sale-price {
+        color: #ff707c; }
+      .product-container .product-item .product-price .original-price {
+        text-decoration: line-through; }
+
+.lineup {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 15%;
+  margin-right: 15%; }
+  .lineup h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ff707c;
+    margin-bottom: 100px; }
+
+.blog-container {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 50px; }
+  .blog-container h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ff707c;
+    margin-bottom: 50px; }
+  .blog-container .blog-row-1 {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .blog-container .blog-row-1 .row-1-pic-div {
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+      -webkit-box-flex: 6;
+          -ms-flex-positive: 6;
+              flex-grow: 6;
+      position: relative;
+      overflow: hidden;
+      padding-top: 500px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("https://njorunactive.com/uploads/images/Blog/_1000x500_crop_center-center_90/19955502_133663627219651_404141471772442624_n.jpg"); }
+    .blog-container .blog-row-1 .row-1-title-div {
+      -webkit-box-flex: 4;
+          -ms-flex-positive: 4;
+              flex-grow: 4;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .blog-container .blog-row-1 .row-1-title-div .text-cont {
+        font-family: 'Playfair Display', serif;
+        width: 40%;
+        font-size: 30px;
+        font-weight: 620;
+        text-align: center; }
+
+.footer {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 15%;
+  margin-right: 15%; }
+  .footer .footer-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    width: 100%; }
+    .footer .footer-container .customer-care,
+    .footer .footer-container .brands,
+    .footer .footer-container .activewear,
+    .footer .footer-container .newsletter {
+      width: 100%; }
+      .footer .footer-container .customer-care .btn,
+      .footer .footer-container .brands .btn,
+      .footer .footer-container .activewear .btn,
+      .footer .footer-container .newsletter .btn {
+        background-color: #ff707c;
+        border: none;
+        border-radius: 0; }
+      .footer .footer-container .customer-care .form-group,
+      .footer .footer-container .brands .form-group,
+      .footer .footer-container .activewear .form-group,
+      .footer .footer-container .newsletter .form-group {
+        width: 50%; }
+      .footer .footer-container .customer-care .form-inline,
+      .footer .footer-container .brands .form-inline,
+      .footer .footer-container .activewear .form-inline,
+      .footer .footer-container .newsletter .form-inline {
+        margin-left: 8%; }
+      .footer .footer-container .customer-care ul,
+      .footer .footer-container .brands ul,
+      .footer .footer-container .activewear ul,
+      .footer .footer-container .newsletter ul {
+        list-style-type: none; }
+        .footer .footer-container .customer-care ul li,
+        .footer .footer-container .brands ul li,
+        .footer .footer-container .activewear ul li,
+        .footer .footer-container .newsletter ul li {
+          font-family: 'Questrial', sans-serif;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          font-weight: 600; }
+          .footer .footer-container .customer-care ul li div,
+          .footer .footer-container .brands ul li div,
+          .footer .footer-container .activewear ul li div,
+          .footer .footer-container .newsletter ul li div {
+            font-size: 13px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            width: 50%;
+            font-weight: 600; }
+
+/*# sourceMappingURL=index.css.map */
