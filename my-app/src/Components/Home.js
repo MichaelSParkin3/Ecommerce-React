@@ -17,10 +17,23 @@ export default class Home extends Component {
         </div>
         <div className="pic-big-container">
           <div className="cont pic-cont-1">
-            <div className="pic pic-1 pic-anim" />
+            <div className="pic pic-1 pic-anim hvr-radial-out" />
+            <div className="caption">
+              <div className="text">
+                <p className="text-center">Nike</p>
+                <h3 className="text-center">Desert Bloom</h3>
+              </div>
+            </div>
           </div>
           <div className="cont pic-cont-2">
-            <div className="pic pic-2 pic-anim" />
+            <div className="pic pic-2 pic-anim hvr-radial-out">
+              <div className="caption-2">
+                <div className="text-2">
+                  <p className="text-center">Nike</p>
+                  <h3 className="text-center">Desert Bloom</h3>
+                </div>
+              </div>
+            </div>
             <div className="pic pic-3">
               <div className="text-cont">
                 <p className="text-center">Orders over $80...</p>
@@ -35,7 +48,14 @@ export default class Home extends Component {
                 <h3 className="text-center">FREE SHIPPING</h3>
               </div>
             </div>
-            <div className="pic pic-4 pic-anim" />
+            <div className="pic pic-4 pic-anim hvr-radial-out">
+              <div className="caption-3">
+                <div className="text-3">
+                  <p className="text-center">Nike</p>
+                  <h3 className="text-center">Desert Bloom</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <Lineup />
@@ -45,7 +65,8 @@ export default class Home extends Component {
           <div className="blog-row-1">
             <div className="row-1-title-div">
               <div className="text-cont">
-                4 Kickass Body Positive Instagrammers You Should Follow
+                4 Kickass Body<br />Positive<br />Instagrammers<br />You Should
+                Follow
               </div>
             </div>
             <div className="row-1-pic-div" />

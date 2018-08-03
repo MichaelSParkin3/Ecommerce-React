@@ -10,7 +10,7 @@ export default class ProductItem extends Component {
               <li>
                 <div>Customer Care</div>
               </li>
-              <li>
+              <li className="foot-li">
                 <a href="/">
                   <span>Contact</span>
                 </a>
@@ -98,7 +98,7 @@ export default class ProductItem extends Component {
               </li>
             </ul>
             <form class="form-inline">
-              <div class="form-group mb-2" />
+              <div class="form-group mb-2 blocker" />
               <div class="form-group mx-sm-3 mb-2">
                 <label for="inputPassword2" class="sr-only">
                   Password

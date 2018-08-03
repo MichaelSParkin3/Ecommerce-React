@@ -8,7 +8,8 @@ var productObjects = [
     brand: 'Nike',
     name: 'Stadium Full Length Leggings',
     sale_price: '44.00',
-    origin_price: '80.00'
+    origin_price: '80.00',
+    id: '1'
   },
   {
     img:
@@ -16,7 +17,8 @@ var productObjects = [
     brand: 'Nike',
     name: 'Energize Bra',
     sale_price: '40.00',
-    origin_price: '88.00'
+    origin_price: '88.00',
+    id: '2'
   },
   {
     img:
@@ -24,7 +26,8 @@ var productObjects = [
     brand: 'Nike',
     name: 'Energize Full Length Leggings',
     sale_price: '48.00',
-    origin_price: '70.00'
+    origin_price: '70.00',
+    id: '3'
   },
   {
     img:
@@ -32,7 +35,8 @@ var productObjects = [
     brand: 'Nike',
     name: 'Stadium Bra',
     sale_price: '45.00',
-    origin_price: '65.00'
+    origin_price: '65.00',
+    id: '4'
   }
 ];
 
@@ -49,6 +53,7 @@ export default class Lineup extends Component {
               name={x.name}
               sale_price={x.sale_price}
               origin_price={x.origin_price}
+              id={x.id}
             />
           ))}
         </div>
