@@ -7,3 +7,5 @@ Sleek clothing ecommerce site I created. The whole site is coded by me using rea
 - CSS3
 - Javascript
 - Flexbox
+# Notice
+- The most popular products section is filled with generated react components from JSON.
