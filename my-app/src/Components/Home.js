@@ -1,3 +1,10 @@
+/*
+Home Component:
+The homepage/landing page for the site. Designed to give you a crash course on what the site has to offer.
+-promotions
+-popular products
+-blog posts
+*/
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Header from './Header';

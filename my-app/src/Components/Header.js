@@ -1,3 +1,8 @@
+/*
+Header Component:
+Top of page complete with search input box, Logo, shopping cart button, and uses the imported Nav component.
+Designed to be at the top of every page.
+*/
 import React, { Component } from 'react';
 
 export default class Header extends Component {

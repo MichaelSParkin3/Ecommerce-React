@@ -1,3 +1,7 @@
+/*
+Nav Component:
+Simple navbar component to route to different pages.
+*/
 import React, { Component } from 'react';
 
 export default class Nav extends Component {

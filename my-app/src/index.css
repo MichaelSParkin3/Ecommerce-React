@@ -1,4 +1,4 @@
-/* Bob */
+/* CSS ANIMATIONS */
 @-webkit-keyframes move-left {
   0% {
     -webkit-box-flex: 6;
@@ -407,6 +407,8 @@
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s; }
 
+/* CSS ANIMATIONS END */
+/* HEADER START */
 .flex-container {
   margin-left: 100px;
   margin-right: 100px;
@@ -494,6 +496,8 @@ nav {
     font-weight: 550;
     font-family: 'Questrial', sans-serif; }
 
+/* HEADER END */
+/* PROMO START */
 .pic-big-container {
   margin-top: 50px;
   margin-left: 15%;
@@ -572,6 +576,8 @@ nav {
           -ms-flex-positive: 2;
               flex-grow: 2; }
 
+/* PROMO END */
+/* POPULAR PRODUCTS START */
 .product-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,6 +627,8 @@ nav {
     color: #ff707c;
     margin-bottom: 100px; }
 
+/* POPULAR PRODUCTS END */
+/* BLOG START */
 .blog-container {
   margin-left: 15%;
   margin-right: 15%;
@@ -691,6 +699,8 @@ nav {
     -webkit-animation-delay: 0.3s;
             animation-delay: 0.3s; }
 
+/* BLOG END */
+/* FOOTER START */
 .footer {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -715,7 +725,17 @@ nav {
       .footer .footer-container .newsletter .btn {
         background-color: #ff707c;
         border: none;
-        border-radius: 0; }
+        border-radius: 0;
+        clear: both;
+        margin-left: 17px;
+        padding-left: 75px;
+        padding-right: 75px;
+        display: block; }
+      .footer .footer-container .customer-care .btn:focus,
+      .footer .footer-container .brands .btn:focus,
+      .footer .footer-container .activewear .btn:focus,
+      .footer .footer-container .newsletter .btn:focus {
+        outline: none !important; }
       .footer .footer-container .customer-care .form-group,
       .footer .footer-container .brands .form-group,
       .footer .footer-container .activewear .form-group,
@@ -755,6 +775,10 @@ nav {
         .footer .footer-container .newsletter ul li:hover span {
           color: #ff707c; }
 
+/* FOOTER END */
+.banner-ad {
+  display: none; }
+
 .hamburger {
   font-size: 30px;
   display: none;
@@ -790,44 +814,33 @@ nav {
       font-size: 30px;
       color: white; }
 
-@media screen and (max-width: 600px) {
-  .flex-container {
-    margin-top: 0; }
+textarea:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='date']:focus,
+input[type='month']:focus,
+input[type='time']:focus,
+input[type='week']:focus,
+input[type='number']:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='color']:focus,
+.uneditable-input:focus {
+  border-color: #ff707c;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0 none; }
 
-  .hamburger {
-    display: block; }
-
-  .blocker {
-    width: 100% !important; }
-
-  .text-cont {
-    font-size: 15px !important;
-    margin: 0 auto; }
-
-  .row-1-pic-div {
-    display: none; }
-
-  .text,
-  .text-2,
-  .text-3 {
-    display: none; }
-
-  .product-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-
-  .flex-container {
-    margin-right: 0;
-    margin-left: 0; }
-    .flex-container .logo-container {
-      width: 100%; }
-      .flex-container .logo-container h1 {
-        font-size: 25px;
-        position: absolute;
-        left: 25%; } }
+/* RESPONSIVE START */
 @media screen and (max-width: 900px) {
+  .hamburger {
+    display: block;
+    margin-top: 10px; }
+
   .footer-container .customer-care,
   .footer-container .activewear,
   .footer-container .brands {
@@ -868,5 +881,44 @@ nav {
 
   .product-item {
     width: auto !important; } }
+@media screen and (max-width: 600px) {
+  .flex-container {
+    margin-top: 0; }
+
+  .hamburger {
+    display: block;
+    margin-top: 20px; }
+
+  .blocker {
+    width: 100% !important; }
+
+  .text-cont {
+    font-size: 15px !important;
+    margin: 0 auto; }
+
+  .row-1-pic-div {
+    display: none; }
+
+  .text,
+  .text-2,
+  .text-3 {
+    display: none; }
+
+  .product-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+
+  .flex-container {
+    margin-right: 0;
+    margin-left: 0; }
+    .flex-container .logo-container {
+      width: 100%; }
+      .flex-container .logo-container h1 {
+        font-size: 25px;
+        position: absolute;
+        left: 25%;
+        margin-top: 25px; } }
 
 /*# sourceMappingURL=index.css.map */

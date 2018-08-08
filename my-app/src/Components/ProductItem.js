@@ -1,3 +1,7 @@
+/*
+ProductItem Component:
+Empty component to be filled with data and then represent a product in the store.
+*/
 import React, { Component } from 'react';
 
 export default class ProductItem extends Component {

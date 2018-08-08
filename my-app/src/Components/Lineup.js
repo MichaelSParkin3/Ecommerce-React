@@ -1,6 +1,12 @@
+/*
+Lineup Component:
+Used to dynamically generate ProductItem Components and fill them with data from the JSON format.
+The items are put into a container and into the popular products section of the Home Component.
+*/
 import React, { Component } from 'react';
 import ProductItem from './ProductItem';
 
+// Dummy JSON data used.
 var productObjects = [
   {
     img:

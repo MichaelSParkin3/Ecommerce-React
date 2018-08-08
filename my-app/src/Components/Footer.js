@@ -1,3 +1,8 @@
+/*
+Footer Component:
+Footer div with all the relevent links seperated into columns.
+Includes newsletter email sign up form.
+*/
 import React, { Component } from 'react';
 
 export default class ProductItem extends Component {
