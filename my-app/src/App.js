@@ -6,6 +6,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import Home from './Components/Home';
+import ProductListPage from './Components/ProductListPage';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,10 +15,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Redirect from={process.env.PUBLIC_URL + '/'} to="home" />
           <Route
-            path={process.env.PUBLIC_URL + '/home'}
+            exact
+            path={process.env.PUBLIC_URL + '/'}
             render={() => <Home ref={this.child} />}
+          />
+          <Route
+            path={process.env.PUBLIC_URL + '/products'}
+            render={() => <ProductListPage ref={this.child} />}
           />
         </div>
       </Router>
