@@ -1,6 +1,6 @@
 /*
 ProductListPage Component:
-
+  Provides a list of products from Json that can be filtered through two groups of radio buttons (color & type).
 */
 import React, { Component } from 'react';
 import Footer from './Footer';
@@ -313,6 +313,8 @@ var productObjects = [
   }
 ];
 
+var initialFilterRan;
+
 export default class ProductListPage extends Component {
   constructor(props) {
     super(props);
@@ -320,6 +322,8 @@ export default class ProductListPage extends Component {
     this.state = {
       fullProducts: productObjects,
       filteredProducts: productObjects,
+      sentFilter: '',
+      sentFilterBool: false,
       typeFiltered: false,
       colorFiltered: false,
       leggingsBool: false,
@@ -334,6 +338,70 @@ export default class ProductListPage extends Component {
     this.filter = this.filter.bind(this);
     this.searchTags = this.searchTags.bind(this);
     this.setTags = this.setTags.bind(this);
+    this.checkSentFilter = this.checkSentFilter.bind(this);
+  }
+  componentWillMount() {
+    initialFilterRan = false;
+    this.setState(
+      {
+        sentFilter: this.props.sentFilter
+      },
+      function() {
+
+
+        var promise = new Promise((resolve, reject)=> {
+
+          console.log('this.state.sentFilter: ' + this.state.sentFilter);
+
+
+          switch (this.state.sentFilter) {
+            case 'leggings':
+              this.setState({
+                leggingsBool: true,
+                sentFilter: ''
+              });
+
+              break;
+
+            case 'tank':
+              this.setState({
+                tankBool: true,
+                sentFilter: ''
+              });
+
+              break;
+
+            case 'tee':
+            console.log('CASE TEE');
+              this.setState({
+                teeBool: true,
+                sentFilter: ''
+              },
+              function() {
+                this.filter('tee', this.id, 'type');
+                console.log('CASE TEEBOOL: '+this.state.teeBool);
+              });
+
+              break;
+
+            case 'bra':
+              this.setState({
+                braBool: true,
+                sentFilter: ''
+              });
+
+              break;
+          }
+
+
+
+        });
+
+        promise.then(this.filter('tee', this.id, 'type'))
+        .catch(err => console.log(err));
+
+      }
+    );
   }
   render() {
     //  If filtered product array is empty then generate message else generate list of products
@@ -358,8 +426,6 @@ export default class ProductListPage extends Component {
 
     return (
       <div className="product-list-page">
-        <Header />
-        <Nav />
         <div className="product-flexbox">
           <div className="filters">
             <h4>Shop by Type</h4>
@@ -573,13 +639,14 @@ export default class ProductListPage extends Component {
             <div className="product-container">{list}</div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 
   //  Filter: Checks what radio button filters are checked and then filters through all the products and returns an array of product objects that match the filters.
   filter(tag, id, filter) {
+    console.log('filter func: '+JSON.stringify(this.state.teeBool));
+    initialFilterRan = true;
     this.setState({ filteredProducts: [] });
     if (
       (this.state.tankBool ||
@@ -605,7 +672,7 @@ export default class ProductListPage extends Component {
       this.state.braBool
     ) {
       var tagArray = this.setTags();
-      console.log(tagArray);
+      console.log('tagArray! ' + tagArray);
       var filteredObjects = this.searchTags(
         tagArray[0],
         this.state.fullProducts
@@ -676,5 +743,53 @@ export default class ProductListPage extends Component {
       tagArray.push('blue');
     }
     return tagArray;
+  }
+  checkSentFilter() {
+
+console.log('state SentFilter: '+this.state.sentFilter);
+
+
+    switch (this.state.sentFilter) {
+      case 'leggings':
+        this.setState({
+          leggingsBool: true,
+          sentFilter: ''
+        });
+
+        break;
+
+      case 'tank':
+        this.setState({
+          tankBool: true,
+          sentFilter: ''
+        });
+
+        break;
+
+      case 'tee':
+      console.log('CASE TEE');
+        this.setState({
+          teeBool: true,
+          sentFilter: ''
+        },
+        function() {
+          console.log('CASE TEEBOOL: '+this.state.teeBool);
+        });
+
+        break;
+
+      case 'bra':
+        this.setState({
+          braBool: true,
+          sentFilter: ''
+        });
+
+        break;
+    }
+
+
+console.log('checkSentFilter: '+this.state.teeBool);
+
+
   }
 }

@@ -4,53 +4,88 @@ Simple navbar component to route to different pages.
 */
 import React, { Component } from 'react';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from 'react-router-dom';
+
 export default class Nav extends Component {
+  constructor(props) {
+    super(props);
+
+    this.sendFilter = this.sendFilter.bind(this);
+  }
   render() {
     return (
       <nav>
         <ul>
           <li className="hvr-float-shadow">
-            <a href="/">
-              <span>Shop By Brand</span>
-            </a>
+            <Link to="/products">
+              <span>Shop By Color</span>
+            </Link>
           </li>
-          <li className="hvr-float-shadow">
-            <a href="/">
+          <Link to="/products">
+            <li
+              onClick={() => {
+                this.sendFilter('leggings');
+              }}
+              className="hvr-float-shadow"
+            >
               <span>Leggings</span>
-            </a>
-          </li>
-          <li className="hvr-float-shadow">
-            <a href="/">
+            </li>
+          </Link>
+          <Link to="/products">
+            <li
+              onClick={() => {
+                this.sendFilter('tank');
+              }}
+              className="hvr-float-shadow"
+            >
               <span>Tanks</span>
-            </a>
-          </li>
-          <li className="hvr-float-shadow">
-            <a href="/">
+            </li>
+          </Link>
+          <Link to="/products">
+            <li
+              onClick={() => {
+                this.sendFilter('tee');
+              }}
+              className="hvr-float-shadow"
+            >
               <span>Tees</span>
-            </a>
-          </li>
-          <li className="hvr-float-shadow">
-            <a href="/">
+            </li>
+          </Link>
+          <Link to="/products">
+            <li
+              onClick={() => {
+                this.sendFilter('bra');
+              }}
+              className="hvr-float-shadow"
+            >
               <span>Bras & Crops</span>
-            </a>
-          </li>
+            </li>
+          </Link>
           <li className="hvr-float-shadow">
-            <a href="/">
+            <Link to="/products">
               <span>Campaigns</span>
-            </a>
+            </Link>
           </li>
           <li className="hvr-float-shadow">
-            <a href="/">
+            <Link to="/products">
               <span>About</span>
-            </a>
+            </Link>
           </li>
           <li className="hvr-float-shadow">
-            <a href="/">
+            <Link to="/products">
               <span>Blog</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
     );
+  }
+  sendFilter(filter) {
+    this.props.filterToParent(filter);
   }
 }

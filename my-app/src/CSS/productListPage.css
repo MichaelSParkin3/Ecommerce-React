@@ -108,4 +108,16 @@
         .product-list-page .product-flexbox .product-container .product-item .product-price .original-price {
           text-decoration: line-through; }
 
+/* RESPONSIVE START */
+@media screen and (max-width: 900px) {
+  .product-flexbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .product-flexbox .filters {
+      width: 100% !important; }
+    .product-flexbox .product-list {
+      width: 100% !important; } }
+
 /*# sourceMappingURL=productListPage.css.map */

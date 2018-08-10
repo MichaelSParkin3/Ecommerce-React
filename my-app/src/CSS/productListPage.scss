@@ -134,3 +134,17 @@
     }
   }
 }
+
+/* RESPONSIVE START */
+
+@media screen and (max-width: 900px) {
+  .product-flexbox {
+    flex-direction: column;
+    .filters {
+      width: 100% !important;
+    }
+    .product-list {
+      width: 100% !important;
+    }
+  }
+}
