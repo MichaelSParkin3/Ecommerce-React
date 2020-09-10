@@ -1,0 +1,286 @@
+.ItemDisplay {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 100px;
+}
+.ItemDisplay .flex-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.ItemDisplay .flex-1 .img-section {
+  width: 100%;
+}
+.ItemDisplay .flex-1 .img-section img {
+  width: 100%;
+}
+.ItemDisplay .flex-1 .btn-section {
+  width: 100%;
+  margin-top: 5vw;
+}
+.ItemDisplay .flex-1 .btn-section .basket-btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.ItemDisplay .flex-1 .btn-section .basket-btn-wrapper button {
+  background-color: $secondary-color;
+  border: None;
+  border-radius: 0;
+  margin-top: 25px;
+}
+.ItemDisplay .flex-1 .btn-section .quantity-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.ItemDisplay .flex-1 .btn-section .quantity-btn-container .quantity-form {
+  width: 40px;
+}
+.ItemDisplay .flex-1 .btn-section .quantity-btn-container h3 {
+  font-size: 45px;
+  color: $secondary-color;
+}
+.ItemDisplay .flex-1 .btn-section .quantity-btn-container button {
+  font-size: 20px;
+  font-weight: 650;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.ItemDisplay .flex-1 .btn-section .size-chart-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.ItemDisplay .flex-1 .btn-section .size-chart-wrapper .btn {
+  color: #000;
+  font-weight: 600;
+}
+.ItemDisplay .flex-1 .btn-section .size-chart-wrapper .btn:hover {
+  color: $secondary-color;
+}
+.ItemDisplay .flex-1 .btn-section .product-price {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+.ItemDisplay .flex-1 .btn-section .product-price .sale-price {
+  color: $secondary-color;
+}
+.ItemDisplay .flex-1 .btn-section .product-price .original-price {
+  text-decoration: line-through;
+}
+.ItemDisplay .flex-1 .btn-section .product-brand {
+  font-family: "playfair+display", sans-serif;
+  font-size: 17px;
+}
+.ItemDisplay .flex-1 .btn-section .product-name {
+  font-family: "Questrial", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+.ItemDisplay .flex-1 .btn-section .size-container {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+.ItemDisplay .flex-1 .btn-section .size-container .product-size {
+  font-weight: 500;
+}
+.ItemDisplay .flex-1 .btn-section .size-container .size-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+  /* Style the indicator (dot/circle) */
+}
+.ItemDisplay .flex-1 .btn-section .size-container .size-btn-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  .checkmark {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #d8d8d8;
+  border-radius: 50%;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  .form-check:hover
+  input
+  ~ .checkmark {
+  background-color: #ccc;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  input:checked
+  ~ .checkmark {
+  background-color: $secondary-color;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  input:checked
+  ~ .checkmark:after {
+  display: block;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.ItemDisplay .flex-1 .btn-section .size-container .size-btn-container input {
+  position: absolute;
+}
+.ItemDisplay .flex-1 .btn-section .size-container .size-btn-container h4 {
+  font-weight: 600;
+  font-family: "Questrial", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ItemDisplay .flex-1 .btn-section .size-container .size-btn-container label {
+  font-family: "Questrial", sans-serif;
+  padding-left: 20px;
+}
+.ItemDisplay
+  .flex-1
+  .btn-section
+  .size-container
+  .size-btn-container
+  .form-check {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  margin: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ItemDisplay .flex-1 .btn-section .product-quantity {
+  margin-top: 25px;
+  font-weight: 500;
+}
+.ItemDisplay .flex-2 {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.ItemDisplay .flex-2 .product-desc {
+  width: 100%;
+}
+.ItemDisplay .flex-2 .product-desc h4 {
+  font-family: "Questrial", sans-serif;
+  padding-bottom: 15px;
+  text-decoration: underline;
+  font-size: 17px;
+}
+.ItemDisplay .flex-2 .product-desc p {
+  font-family: "Questrial", sans-serif;
+}
+.ItemDisplay .flex-2 .product-details {
+  width: 100%;
+  padding-left: 10%;
+}
+.ItemDisplay .flex-2 .product-details h4 {
+  font-family: "Questrial", sans-serif;
+  padding-bottom: 15px;
+  text-decoration: underline;
+  font-size: 17px;
+}
+.ItemDisplay .flex-2 .product-details p {
+  font-family: "Questrial", sans-serif;
+}
+
+/* RESPONSIVE START */
+@media screen and (max-width: 1200px) {
+  .ItemDisplay .flex-1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 900px) {
+  .ItemDisplay .flex-2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .ItemDisplay .product-details {
+    padding-left: 0 !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .size-btn-container .form-check {
+    margin: 7px !important;
+  }
+}
+
+/*# sourceMappingURL=itemDisplay.css.map */

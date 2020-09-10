@@ -18,10 +18,7 @@ export default class Home extends Component {
         <div className="banner-ad">
           <p>FREE UK Delivery & Returns - on all orders over £85</p>
         </div>
-        <Header />
-        <div>
-          <Nav />
-        </div>
+
         <div className="pic-big-container">
           <div className="cont pic-cont-1">
             <div className="pic pic-1 pic-anim hvr-radial-out" />
@@ -79,7 +76,6 @@ export default class Home extends Component {
             <div className="row-1-pic-div" />
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

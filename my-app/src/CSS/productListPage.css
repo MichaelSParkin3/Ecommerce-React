@@ -1,0 +1,182 @@
+.product-list-page .product-flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 100px;
+}
+.product-list-page .product-flexbox .filters {
+  width: 20%;
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+  /* Style the indicator (dot/circle) */
+}
+.product-list-page .product-flexbox .filters input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.product-list-page .product-flexbox .filters .checkmark {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #d8d8d8;
+  border-radius: 50%;
+}
+.product-list-page
+  .product-flexbox
+  .filters
+  .form-check:hover
+  input
+  ~ .checkmark {
+  background-color: #ccc;
+}
+.product-list-page .product-flexbox .filters input:checked ~ .checkmark {
+  background-color: $secondary-color;
+}
+.product-list-page .product-flexbox .filters .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.product-list-page .product-flexbox .filters input:checked ~ .checkmark:after {
+  display: block;
+}
+.product-list-page .product-flexbox .filters .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.product-list-page .product-flexbox .filters input {
+  position: absolute;
+}
+.product-list-page .product-flexbox .filters h4 {
+  font-weight: 600;
+  font-family: "Questrial", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.product-list-page .product-flexbox .filters label {
+  font-family: "Questrial", sans-serif;
+  padding-left: 20px;
+}
+.product-list-page .product-flexbox .filters .form-check {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.product-list-page .product-flexbox .product-list {
+  width: 80%;
+}
+.product-list-page .product-flexbox .product-container {
+  width: 100%;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.product-list-page .product-flexbox .product-container h1 {
+  margin-top: 150px;
+}
+.product-list-page .product-flexbox .product-container .product-item {
+  font-family: "Questrial", sans-serif;
+  width: 25%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 3.5vw;
+  margin-bottom: 3.5vw;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-img-cont {
+  overflow: hidden;
+}
+.product-list-page .product-flexbox .product-container .product-item img {
+  width: 100%;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-brand {
+  font-size: 15px;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-name {
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-price {
+  font-weight: 500;
+  position: relative;
+  display: block;
+  margin: auto;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-price
+  .sale-price {
+  color: $secondary-color;
+}
+.product-list-page
+  .product-flexbox
+  .product-container
+  .product-item
+  .product-price
+  .original-price {
+  text-decoration: line-through;
+}
+
+/* RESPONSIVE START */
+@media screen and (max-width: 900px) {
+  .product-flexbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .product-flexbox .filters {
+    width: 100% !important;
+  }
+  .product-flexbox .product-list {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=productListPage.css.map */
