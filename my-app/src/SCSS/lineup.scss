@@ -1,0 +1,67 @@
+@import "./colors.scss";
+
+/* POPULAR PRODUCTS START */
+.lineup {
+  .product-container {
+    display: flex;
+    align-items: stretch;
+    .product-item {
+      font-family: "Questrial", sans-serif;
+      flex: 1;
+      padding-left: 1%;
+      padding-right: 1%;
+      .product-img-cont {
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        position: relative;
+        display: block;
+        margin: auto;
+      }
+      .product-brand {
+        font-size: 15px;
+        position: relative;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+      }
+      .product-name {
+        font-size: 20px;
+        font-weight: 700;
+        position: relative;
+        display: block;
+        margin: auto;
+      }
+      .product-price {
+        font-weight: 500;
+        position: relative;
+        display: block;
+        margin: auto;
+        .sale-price {
+          color: $secondary-color;
+        }
+        .original-price {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+// .product-container:hover .product-name {
+//   color: $secondary-color;
+// }
+.lineup {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 15%;
+  margin-right: 15%;
+  h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: $secondary-color;
+    margin-bottom: 100px;
+  }
+}
+
+/* POPULAR PRODUCTS END */

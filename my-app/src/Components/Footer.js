@@ -3,9 +3,20 @@ Footer Component:
 Footer div with all the relevent links seperated into columns.
 Includes newsletter email sign up form.
 */
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import { addFilter } from "../Actions/actions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import "../SCSS/footer.scss";
+import { boolChange } from "../globalFunctions";
 
-export default class ProductItem extends Component {
+class Footer extends Component {
   render() {
     return (
       <div className="footer">
@@ -16,34 +27,34 @@ export default class ProductItem extends Component {
                 <div>Customer Care</div>
               </li>
               <li className="foot-li">
-                <a href="/">
+                <Link to="/">
                   <span>Contact</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Terms of Use</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Delivery</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Returns</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Terms of Sale of Goods</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Privacy and Cookie Policy</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -53,19 +64,19 @@ export default class ProductItem extends Component {
                 <div>Brands</div>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Nike</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Adidas</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <span>Supreme</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -74,25 +85,93 @@ export default class ProductItem extends Component {
               <li>
                 <div>Activewear</div>
               </li>
-              <li>
-                <a href="/">
+              <li
+                onClick={() => {
+                  boolChange(
+                    {
+                      leggingsBool: true,
+                      braBool: false,
+                      teeBool: false,
+                      tankBool: false,
+                      whiteBool: false,
+                      blackBool: false,
+                      blueBool: false,
+                    },
+                    "leggings",
+                    this.props.addFilter,
+                    this.props.filterToParent
+                  );
+                }}
+              >
+                <Link to="/products">
                   <span>Leggings</span>
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="/">
+              <li
+                onClick={() => {
+                  boolChange(
+                    {
+                      leggingsBool: false,
+                      braBool: false,
+                      teeBool: false,
+                      tankBool: true,
+                      whiteBool: false,
+                      blackBool: false,
+                      blueBool: false,
+                    },
+                    "tank",
+                    this.props.addFilter,
+                    this.props.filterToParent
+                  );
+                }}
+              >
+                <Link to="/products">
                   <span>Tanks</span>
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="/">
+              <li
+                onClick={() => {
+                  boolChange(
+                    {
+                      leggingsBool: false,
+                      braBool: false,
+                      teeBool: true,
+                      tankBool: false,
+                      whiteBool: false,
+                      blackBool: false,
+                      blueBool: false,
+                    },
+                    "tee",
+                    this.props.addFilter,
+                    this.props.filterToParent
+                  );
+                }}
+              >
+                <Link to="/products">
                   <span>Tees</span>
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="/">
+              <li
+                onClick={() => {
+                  boolChange(
+                    {
+                      leggingsBool: false,
+                      braBool: true,
+                      teeBool: false,
+                      tankBool: false,
+                      whiteBool: false,
+                      blackBool: false,
+                      blueBool: false,
+                    },
+                    "bra",
+                    this.props.addFilter,
+                    this.props.filterToParent
+                  );
+                }}
+              >
+                <Link to="/products">
                   <span>Bras and Crops</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -125,3 +204,18 @@ export default class ProductItem extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    filterList: state.filterList,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
+  return bindActionCreators({ addFilter: addFilter }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps, null, {
+  withRef: true,
+})(Footer);

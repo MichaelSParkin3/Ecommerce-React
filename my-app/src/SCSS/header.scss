@@ -1,0 +1,204 @@
+@import "./colors.scss";
+
+/* HEADER START */
+
+.flex-container {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+a {
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.cart-container {
+  text-align: center;
+  .fa-shopping-cart {
+    font-size: 40px;
+    margin-top: 12px;
+    position: relative;
+  }
+}
+
+.logo-container {
+  margin: auto;
+}
+.searchbar-container,
+.logo-container,
+.cart-container {
+  h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 550;
+  }
+  .fa-search {
+    margin-top: 12px;
+    font-size: 40px;
+    position: relative;
+  }
+  input {
+    width: 50%;
+    margin: 0 AUTO;
+    border: none;
+    border-bottom: 1px solid black;
+    .form-control {
+      border-radius: 0 !important;
+    }
+  }
+  .searchbar-window,
+  .searchbar-window0 {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: $secondary-color;
+    .big-search {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: $secondary-color;
+      padding-bottom: 100px;
+
+      .results-container {
+        width: 80%;
+        margin-top: 130px;
+        background-color: $background-color;
+
+        .product-container {
+          width: 100%;
+          justify-content: space-around;
+          display: flex;
+          align-items: stretch;
+          flex-wrap: wrap;
+          .results-default {
+            color: $secondary-color;
+          }
+          .product-item {
+            font-family: "Questrial", sans-serif;
+            width: 25%;
+            margin-left: 4%;
+            margin-right: 4%;
+            margin-top: 3.5vw;
+            margin-bottom: 3.5vw;
+            .product-img-cont {
+              overflow: hidden;
+              img {
+                width: 100%;
+              }
+            }
+            img {
+              width: 100%;
+              position: relative;
+              display: block;
+              margin: auto;
+            }
+            .product-brand {
+              font-size: 15px;
+              position: relative;
+              display: block;
+              margin: auto;
+            }
+            .product-name {
+              font-size: 20px;
+              font-weight: 700;
+              position: relative;
+              display: block;
+              margin: auto;
+            }
+            .product-price {
+              font-weight: 500;
+              position: relative;
+              display: block;
+              margin: auto;
+              .sale-price {
+                color: $secondary-color;
+              }
+              .original-price {
+                text-decoration: line-through;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .input-container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-50px);
+      opacity: 0;
+      .big-search-icon {
+        position: initial;
+        font-size: 50px;
+        color: $background-color;
+        width: 50px;
+        margin-top: 12px;
+      }
+      .big-search-input {
+        width: 85%;
+        font-size: 35px;
+        margin: 0 AUTO;
+        border: none;
+        border-bottom: 3px solid $background-color;
+        background-color: $secondary-color;
+        color: $background-color;
+      }
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $background-color;
+        opacity: 1; /* Firefox */
+      }
+    }
+    .fa-times {
+      font-size: 40px;
+      position: absolute;
+      top: 35px;
+      right: 45px;
+      color: $background-color;
+    }
+  }
+}
+
+.banner-ad {
+  margin-top: 200px;
+  width: 100%;
+  background-color: black;
+  p {
+    color: white;
+  }
+}
+
+nav {
+  margin-left: 15%;
+  margin-right: 15%;
+  ul {
+    list-style-type: none;
+    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    padding: 0;
+  }
+  li {
+    font-weight: 550;
+    font-family: "Questrial", sans-serif;
+  }
+  .shopByColor {
+    margin-top: 1.5px;
+  }
+}
+
+/* HEADER END */

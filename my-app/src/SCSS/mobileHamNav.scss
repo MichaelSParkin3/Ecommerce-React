@@ -1,0 +1,94 @@
+@import "./colors.scss";
+
+.ham-container {
+  .ham-menu {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    background-color: $secondary-color;
+    ul {
+      display: none;
+      opacity: 0;
+      list-style-type: none;
+      background-color: $secondary-color;
+      padding: 0;
+      .ham-close-li {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        button {
+          border-bottom: none;
+          border-top: 2px solid snow;
+        }
+      }
+      .cart-ham-li {
+        span {
+          margin-right: 15px;
+        }
+      }
+      li {
+        div {
+          button {
+            width: 100%;
+            background-color: $secondary-color;
+            border: none;
+            font-family: "Questrial", sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: $background-color;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid snow;
+          }
+          button:focus {
+            outline: none;
+          }
+          button:hover {
+            color: $secondary-color;
+            background-color: $background-color;
+
+            -webkit-transition: background-color 200ms linear;
+            -ms-transition: background-color 200ms linear;
+            transition: background-color 200ms linear;
+
+            -webkit-transition: color 200ms linear;
+            -ms-transition: color 200ms linear;
+            transition: color 200ms linear;
+          }
+          span {
+            display: flex;
+            .numberCircle {
+              border-radius: 50%;
+              width: 44px;
+              height: 44px;
+              margin: 3px;
+              font-size: 22px;
+
+              background: $secondary-color;
+              border: 3px solid $background-color;
+              color: $background-color;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 34px;
+            }
+            img {
+              transform: rotate(180deg);
+              height: 50px;
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

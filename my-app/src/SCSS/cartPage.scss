@@ -1,0 +1,78 @@
+@import "./colors.scss";
+
+.cart-page {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 100px;
+  .cart-flex-container {
+    display: flex;
+    flex-direction: row;
+    .cartItem-container {
+      width: 72%;
+      margin-right: 3%;
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        .cart-img-and-info {
+          display: flex;
+          img {
+            width: 30%;
+          }
+          .cart-info {
+            font-family: "Questrial", sans-serif;
+            margin-left: 10px;
+            h4 {
+              font-weight: 600;
+              font-size: 35px;
+              margin: 0;
+            }
+            p {
+              font-size: 20px;
+              margin: 0;
+            }
+          }
+        }
+        .cart-remove-btn {
+          i {
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            margin: 3px;
+            font-size: 22px;
+            background: $background-color;
+            border: 3px solid $secondary-color;
+            color: $secondary-color;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .total-container {
+      width: 22%;
+      margin-left: 3%;
+      ul {
+        padding: 0;
+        li {
+          list-style-type: none;
+          padding: 0;
+          span {
+            display: inline-block;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* RESPONSIVE START */
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 900px) {
+}
+@media screen and (max-width: 600px) {
+}

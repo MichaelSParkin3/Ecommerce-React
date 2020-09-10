@@ -3,85 +3,84 @@ Header Component:
 Top of page complete with search input box, Logo, shopping cart button, and uses the imported Nav component.
 Designed to be at the top of every page.
 */
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
+import { addFilter } from "../Actions/actions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import Anime from "react-anime";
+import "../SCSS/header.scss";
+import SearchBar from "./SearchBar";
+import MobileHamNav from "./MobileHamNav";
 
-export default class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.hambar = this.hambar.bind(this);
+    this.state = {
+      cartAnim: {
+        translateX: [
+          {
+            value: 10 * -1,
+          },
+          {
+            value: 10,
+          },
+          {
+            value: 10 / -2,
+          },
+          {
+            value: 10 / 2,
+          },
+          {
+            value: 0,
+          },
+        ],
+        easing: "easeInOutQuad",
+        duration: 390,
+      },
+    };
   }
+
   render() {
     return (
       <div className="flex-container">
-        <div className="searchbar-container">
-          <i className="fas fa-search" />
-          <input className="form-control" type="text" placeholder="Search" />
-        </div>
+        <SearchBar />
         <div className="logo-container">
-          <h1 className="text-center pic-anim">NORDSTROM</h1>
+          <Link to="/">
+            <h1 className="text-center pic-anim">NORDSTROM</h1>
+          </Link>
         </div>
         <div className="cart-container">
-          <i className="pic-anim fas fa-shopping-cart" />
+          <Link to="/cart">
+            <Anime {...this.state.cartAnim}>
+              <i className="pic-anim fas fa-shopping-cart" />
+            </Anime>
+          </Link>
         </div>
-        <div onClick={this.hambar} className="hamburger">
-          <i className="fas fa-bars" />
-        </div>
-        <div id="ham-menu" className="ham-menu">
-          <div onClick={this.closeHam} className="ham-exit">
-            <i class="fas fa-times" />
-          </div>
-          <ul>
-            <li className="">
-              <a href="/">
-                <span>Shop By Brand</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Leggings</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Tanks</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Tees</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Bras & Crops</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Campaigns</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>About</span>
-              </a>
-            </li>
-            <li className="">
-              <a href="/">
-                <span>Blog</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <MobileHamNav filterToParent={this.props.filterToParent} />
       </div>
     );
   }
-  hambar() {
-    console.log('hi');
-    document.getElementById('ham-menu').style.display = 'block';
-  }
-  closeHam() {
-    document.getElementById('ham-menu').style.display = 'none';
-  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    filterList: state.filterList,
+    cartArray: state.cartArray,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
+  return bindActionCreators({ addFilter: addFilter }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps, null, {
+  withRef: true,
+})(Header);

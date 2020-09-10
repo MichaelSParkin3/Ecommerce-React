@@ -1,0 +1,225 @@
+@import "./colors.scss";
+
+.ItemDisplay {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 100px;
+  .flex-1 {
+    display: flex;
+    flex-direction: row;
+    .img-section {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .btn-section {
+      width: 100%;
+      margin-top: 5vw;
+      .basket-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+          background-color: $secondary-color;
+          border: None;
+          border-radius: 0;
+          margin-top: 25px;
+        }
+      }
+      .quantity-btn-container {
+        display: flex;
+        justify-content: center;
+        .quantity-form {
+          width: 40px;
+        }
+        h3 {
+          font-size: 45px;
+          color: $secondary-color;
+        }
+        button {
+          font-size: 20px;
+          font-weight: 650;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      .size-chart-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn {
+          color: #000;
+          font-weight: 600;
+        }
+        .btn:hover {
+          color: $secondary-color;
+        }
+      }
+      .product-price {
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+        display: block;
+        margin: auto;
+        .sale-price {
+          color: $secondary-color;
+        }
+        .original-price {
+          text-decoration: line-through;
+        }
+      }
+      .product-brand {
+        font-family: "playfair+display", sans-serif;
+        font-size: 17px;
+      }
+      .product-name {
+        font-family: "Questrial", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .size-container {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        .product-size {
+          font-weight: 500;
+        }
+        .size-btn-container {
+          display: flex;
+          justify-content: center;
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+          /* Create a custom radio button */
+          .checkmark {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #d8d8d8;
+            border-radius: 50%;
+          }
+
+          /* On mouse-over, add a grey background color */
+          .form-check:hover input ~ .checkmark {
+            background-color: #ccc;
+          }
+
+          /* When the radio button is checked, add a blue background */
+          input:checked ~ .checkmark {
+            background-color: $secondary-color;
+          }
+
+          /* Create the indicator (the dot/circle - hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+
+          /* Show the indicator (dot/circle) when checked */
+          input:checked ~ .checkmark:after {
+            display: block;
+          }
+
+          /* Style the indicator (dot/circle) */
+          .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+          }
+
+          input {
+            position: absolute;
+          }
+          h4 {
+            font-weight: 600;
+            font-family: "Questrial", sans-serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          label {
+            font-family: "Questrial", sans-serif;
+            padding-left: 20px;
+          }
+          .form-check {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+            margin: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .product-quantity {
+        margin-top: 25px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .flex-2 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    .product-desc {
+      width: 100%;
+      h4 {
+        font-family: "Questrial", sans-serif;
+        padding-bottom: 15px;
+        text-decoration: underline;
+        font-size: 17px;
+      }
+      p {
+        font-family: "Questrial", sans-serif;
+      }
+    }
+    .product-details {
+      width: 100%;
+      padding-left: 10%;
+      h4 {
+        font-family: "Questrial", sans-serif;
+        padding-bottom: 15px;
+        text-decoration: underline;
+        font-size: 17px;
+      }
+      p {
+        font-family: "Questrial", sans-serif;
+      }
+    }
+  }
+}
+
+/* RESPONSIVE START */
+
+@media screen and (max-width: 1200px) {
+  .ItemDisplay {
+    .flex-1 {
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .ItemDisplay {
+    .flex-2 {
+      flex-direction: column;
+    }
+    .product-details {
+      padding-left: 0 !important;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .size-btn-container {
+    .form-check {
+      margin: 7px !important;
+    }
+  }
+}
