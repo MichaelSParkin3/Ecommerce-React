@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "animejs": "^3.2.0",
-    "node-sass": "^4.14.1",
     "react": "^16.4.1",
     "react-anime": "^3.0.3",
     "react-dom": "^16.4.1",
@@ -18,10 +17,11 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-persist": "^6.0.0",
     "redux-saga": "^0.16.0",
+    "sass": "^1.64.1",
     "uuid": "^8.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
